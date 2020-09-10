@@ -45,6 +45,8 @@ class TwitterBot:
         time.sleep(2)
         comment = bot.find_element_by_xpath("//div[@role='textbox']")
         comment.send_keys(self.tweetMessages[random.randint(0,4)])
+        retweetButton = bot.find_element_by_xpath("//div[@data-testid='tweetButton']")
+        retweetButton.click()
         
 
 
