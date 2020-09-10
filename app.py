@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time
 import random 
+import accountinfo
 
 class TwitterBot:
     def __init__(self, username, password):
@@ -50,7 +51,7 @@ class TwitterBot:
         
 
 
-CovidBot = TwitterBot("nineteenc82@gmail.com", "FUCKCovid19")
+CovidBot = TwitterBot(accountinfo.username, accountinfo.password)
 CovidBot.login()
 tweet_link = CovidBot.findTweet()
 CovidBot.retweetUpdate(tweet_link)
