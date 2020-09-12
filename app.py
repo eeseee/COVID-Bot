@@ -1,7 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time
-import random 
+from random import randrange
 import accountinfo
 
 class TwitterBot:
@@ -45,7 +45,7 @@ class TwitterBot:
         bot.find_element_by_xpath("//a[@href='/compose/tweet']").click()
         time.sleep(2)
         comment = bot.find_element_by_xpath("//div[@role='textbox']")
-        comment.send_keys(self.tweetMessages[random.randint(0,4)])
+        comment.send_keys(self.tweetMessages[randrange(4)])
         retweetButton = bot.find_element_by_xpath("//div[@data-testid='tweetButton']")
         retweetButton.click()
         
